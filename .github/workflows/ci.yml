@@ -1,14 +1,12 @@
 name: CI
-on: [push] # Define o evento que dispara o workflow
+on: [push] 
 jobs:
   test:
-    runs-on: ubuntu-latest # Define o ruuner: maquina virtual ubuntu fornecida pelo gihub
+    runs-on: ubuntu-latest 
     steps:
-      - uses: actions/checkout@v4 # Action que baixa o codigo do repositorio para dentro do runner.
-      - uses: actions/setup-python@v5 #Action que instala a versao do python.
+      - uses: actions/checkout@v4 
+      - uses: actions/setup-python@v5 
         with:
           python-version: '3.12'
-      - run: pip install -r requirements.txt #Instala as dependencias do projeto.
-      - run: pytest # Executa os testes automatizados.
-# FLUXO RESUMIDO : 
-# PUSH - GITHUB ACTIONS - INSTALAR DEPENDENCIAS - EXECUTAR TESTES - RESULTADO (SUCESSO OU FALHA NA ABA ACTION DO REPOSITORIO)
+      - run: pip install -r requirements.txt 
+      - run: pytest 
